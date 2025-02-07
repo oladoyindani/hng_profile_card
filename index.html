@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Professional Profile Card</title>
+  <!-- Google Fonts for a clean, professional look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f0f2f5, #d9e4ee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Profile Card Styles */
+    .profile-card {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      padding: 30px 20px;
+      animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    }
+
+    .profile-picture {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #d9e4ee;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    /* Animated text elements with staggered delays */
+    .full-name {
+      font-size: 1.8em;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+      animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+
+    .job-title {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 15px;
+      animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+
+    .short-bio {
+      font-size: 1em;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      padding: 0 10px;
+      animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+      animation-delay: 0.6s;
+      opacity: 0;
+    }
+
+    .current-location,
+    .email-address,
+    .current-time {
+      font-size: 0.95em;
+      color: #777;
+      margin-bottom: 12px;
+      animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+      opacity: 0;
+    }
+
+    .current-location {
+      animation-delay: 0.8s;
+    }
+
+    .email-address {
+      animation-delay: 1s;
+    }
+
+    .current-time {
+      animation-delay: 1.2s;
+    }
+
+    .social-links {
+      margin-top: 20px;
+      animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+      animation-delay: 1.4s;
+      opacity: 0;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: #0077b5; /* Default link color for LinkedIn */
+      margin: 0 8px;
+      transition: color 0.3s;
+      font-size: 1.2em;
+    }
+
+    .social-links a:hover {
+      color: #005582;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .profile-card {
+        padding: 20px 15px;
+      }
+      .full-name {
+        font-size: 1.6em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <!-- Profile Picture -->
+    <img
+      src="profile-picture.JPG"
+      alt="Profile Picture"
+      class="profile-picture"
+      data-testid="profilePicture"
+    />
+
+    <!-- Full Name -->
+    <div class="full-name" data-testid="fullName">Taiwo-Agoi Oladoyin Daniel</div>
+
+    <!-- Job Title -->
+    <div class="job-title" data-testid="jobTitle">Front-End Developer</div>
+
+    <!-- Short Bio -->
+    <div class="short-bio" data-testid="shortBio">
+      I am a passionate front-end developer with a knack for creating intuitive and responsive web interfaces. With a strong background in JavaScript, HTML, CSS, ReactJS, Typescript, Bulma and Bootstrap CSS frameworks, I love transforming creative ideas into reality. I continuously strive to learn new technologies and improve my skills in modern web development.
+    </div>
+
+    <!-- Current Location -->
+    <div class="current-location" data-testid="currentLocation">
+      Lagos, Nigeria
+    </div>
+
+    <!-- Email Address -->
+    <div class="email-address" data-testid="emailAddress">
+      oladoyindan@gmail.com
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links" data-testid="socialLinks">
+      <a href="https://www.linkedin.com/in/oladoyin-daniel-75494a250/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+        <img src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn" width="24" height="24" />
+      </a>
+      <a href="https://github.com/oladoyindani" target="_blank" rel="noopener noreferrer" title="GitHub">
+        <img src="https://simpleicons.org/icons/github.svg" alt="GitHub" width="24" height="24" />
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
+        <img src="https://simpleicons.org/icons/twitter.svg" alt="Twitter" width="24" height="24" />
+      </a>
+    </div>
+
+    <!-- Current Time in UTC -->
+    <div class="current-time" data-testid="currentTimeUTC"></div>
+  </div>
+
+  <script>
+    // Function to update the current UTC time dynamically
+    function updateUTCTime() {
+      const timeElement = document.querySelector('[data-testid="currentTimeUTC"]');
+      const nowUTC = new Date().toUTCString();
+      timeElement.textContent = `Current Time (UTC): ${nowUTC}`;
+    }
+    // Update the time when the page loads
+    updateUTCTime();
+  </script>
+</body>
+</html>
